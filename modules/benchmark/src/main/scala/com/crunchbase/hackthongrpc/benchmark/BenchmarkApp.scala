@@ -3,7 +3,7 @@ package com.crunchbase.hackthongrpc.benchmark
 import cats.effect._
 import cats.implicits._
 import com.comcast.ip4s._
-import com.crunchbase.protos.ping.GreeterFs2Grpc
+import com.crunchbase.protos.greet.GreeterFs2Grpc
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder
 import fs2.grpc.syntax.all._
 import org.http4s.ember.client.EmberClientBuilder

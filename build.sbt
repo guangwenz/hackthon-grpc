@@ -41,26 +41,23 @@ lazy val protobuf = project
   )
   .enablePlugins(Fs2Grpc)
 
-lazy val benchmark = project
-  .in(file("modules/benchmark"))
-  .settings(
-    commonSettings,
-    libraryDependencies ++= Seq(
-      "org.http4s" %% "http4s-ember-server" % Http4sVersion,
-      "org.http4s" %% "http4s-ember-client" % Http4sVersion,
-      "org.http4s" %% "http4s-circe" % Http4sVersion,
-      "org.http4s" %% "http4s-dsl" % Http4sVersion,
-      "io.circe" %% "circe-generic" % CirceVersion,
-      "org.scalameta" %% "munit" % MunitVersion % Test,
-      "org.typelevel" %% "munit-cats-effect-3" % MunitCatsEffectVersion % Test,
-      "ch.qos.logback" % "logback-classic" % LogbackVersion,
-      "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test,it",
-      "io.gatling" % "gatling-test-framework" % gatlingVersion % "test,it"
-    ),
-    javaOptions += "--add-opens java.base/jdk.internal.misc=ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible=true"
-  )
-  .dependsOn(protobuf)
-  .enablePlugins(GatlingPlugin)
+lazy val benchmark = project.in(file("modules/benchmark")).settings(
+  commonSettings,
+  libraryDependencies ++= Seq(
+    "org.http4s" %% "http4s-ember-server" % Http4sVersion,
+    "org.http4s" %% "http4s-ember-client" % Http4sVersion,
+    "org.http4s" %% "http4s-circe" % Http4sVersion,
+    "org.http4s" %% "http4s-dsl" % Http4sVersion,
+    "io.circe" %% "circe-generic" % CirceVersion,
+    "org.scalameta" %% "munit" % MunitVersion % Test,
+    "org.typelevel" %% "munit-cats-effect-3" % MunitCatsEffectVersion % Test,
+    "ch.qos.logback" % "logback-classic" % LogbackVersion,
+    "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test,it",
+    "io.gatling" % "gatling-test-framework" % gatlingVersion % "test,it"
+  ),
+  javaOptions += "--add-opens java.base/jdk.internal.misc=ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible=true"
+).enablePlugins(GatlingPlugin).dependsOn(protobuf)
+
 
 lazy val root = (project in file(".")).aggregate(
   protobuf,

@@ -1,7 +1,7 @@
 package com.crunchbase.hackthongrpc
 
 import cats.effect.{ExitCode, IO, IOApp, Resource}
-import com.crunchbase.protos.ping.{GreeterFs2Grpc, HelloReply, HelloRequest}
+import com.crunchbase.protos.greet.{GreeterFs2Grpc, HelloReply, HelloRequest}
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder
 import fs2.grpc.syntax.all._
 import io.grpc._
