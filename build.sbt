@@ -56,7 +56,7 @@ lazy val benchmark = project.in(file("modules/benchmark")).settings(
     "io.gatling" % "gatling-test-framework" % gatlingVersion % "test,it"
   ),
   javaOptions += "--add-opens java.base/jdk.internal.misc=ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible=true"
-).dependsOn(protobuf)
+).enablePlugins(GatlingPlugin).dependsOn(protobuf)
 
 
 lazy val root = (project in file(".")).aggregate(

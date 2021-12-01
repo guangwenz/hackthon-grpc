@@ -2,7 +2,7 @@ package com.crunchbase.hackthongrpc.benchmark
 
 import cats.implicits._
 import cats.effect.kernel.Async
-import com.crunchbase.protos.ping.{GreeterFs2Grpc, HelloRequest}
+import com.crunchbase.protos.greet.{GreeterFs2Grpc, HelloRequest}
 
 import io.circe.Decoder
 import io.circe.generic.semiauto._
