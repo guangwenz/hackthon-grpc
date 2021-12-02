@@ -1,4 +1,4 @@
-package com.crunchbase.hackathongrpc.benchmark
+package com.crunchbase.hackathonrpc.benchmark
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
