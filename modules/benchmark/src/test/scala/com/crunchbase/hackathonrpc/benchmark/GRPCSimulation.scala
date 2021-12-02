@@ -1,10 +1,10 @@
-package com.crunchbase.hackathongrpc.benchmark
+package com.crunchbase.hackathonrpc.benchmark
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
 class GRPCSimulation extends Simulation {
-  val httpProtocol = http.baseUrl("http://localhost:8080")
+  val httpProtocol = http.baseUrl(Benchmark.host)
 
   val rpc = scenario("RPC").exec(repeat(1000, "n") {
     exec(http("grpc").get("/rpc/hello/test#{n}"))
