@@ -55,7 +55,7 @@ lazy val benchmark = project.in(file("modules/benchmark")).settings(
     "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test,it",
     "io.gatling" % "gatling-test-framework" % gatlingVersion % "test,it"
   ),
-  javaOptions += "--add-opens java.base/jdk.internal.misc=ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible=true"
+  // javaOptions += "--add-opens java.base/jdk.internal.misc=ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible=true"
 ).enablePlugins(GatlingPlugin).dependsOn(protobuf)
 
 
