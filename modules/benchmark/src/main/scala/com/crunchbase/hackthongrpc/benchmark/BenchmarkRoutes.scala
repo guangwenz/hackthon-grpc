@@ -17,6 +17,8 @@ object BenchmarkRoutes {
 
       case GET -> Root / "rest" / "hello" / name =>
         greetClient.rest(name).flatMap(Ok(_))
+      case GET -> Root / "rest-post" / "hello" / name =>
+        greetClient.rest(name).flatMap(Ok(_))
     }
   }
 }
