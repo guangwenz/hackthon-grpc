@@ -3,6 +3,7 @@
 1. `sbt server/run` to run the server
 
 2. `JAVA_OPTS="--add-opens java.base/jdk.internal.misc=ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible=true" sbt benchmark/run` to run the benchmark api server
+3. `sbt benchmark/Gatling/test` to start the gatling test
 
 
 ## Modules
